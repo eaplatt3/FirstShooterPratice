@@ -6,8 +6,6 @@ public class Shooting : MonoBehaviour
 {
 
     public Rigidbody projectile;
-    public Camera camera1;
-    public Camera camera2;
     public int speed = 50;
     public float angle = 10.0f;
     // Use this for initialization
@@ -19,19 +17,6 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKey("1"))
-        {
-            camera1.enabled = false;
-            camera2.enabled = true;
-
-        }
-        else if (Input.GetKey("2"))
-        {
-            camera2.enabled = false;
-            camera1.enabled = true;
-
-        }
 
         if (Input.GetKey("3"))
         {
@@ -50,7 +35,7 @@ public class Shooting : MonoBehaviour
         {
             // Instantiate the projectile at the position and rotation of this transform
             Rigidbody clone;
-            clone = Instantiate(projectile, transform.position, transform.rotation);
+            clone = Instantiate(projectile, transform.position + transform.forward, transform.rotation);
 
             // Give the cloned object an initial velocity along the current
             // object's Z axis

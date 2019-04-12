@@ -23,8 +23,8 @@ public class Rotate : MonoBehaviour
     {
               
         
-        transform.Rotate(new Vector3(0, Input.GetAxisRaw("vc")*spd, 0));
-        transform.Translate(new Vector3(Input.GetAxisRaw("cc"), 0, 0) * mspd);
+        transform.Rotate(new Vector3(0, Input.GetAxisRaw("vc"), 0) * spd);
+        transform.Translate(new Vector3(0, 0, Input.GetAxisRaw("cc")) * mspd);
        
 
         if (Input.GetKeyDown("1")) { flge = !flge; }
