@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DestroyEnemy : MonoBehaviour
 {
-    
+    public int value = 1;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -32,10 +33,16 @@ public class DestroyEnemy : MonoBehaviour
                 break;
 
             case "Bullet":
-        
+                if (GameManager.gm != null)
+                {
+                    // tell the game manager to Collect
+                    GameManager.gm.Collect(value);
+                }
                 Destroy(this.gameObject);
                 break;
 
         }
     }
 }
+
+
